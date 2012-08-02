@@ -4,13 +4,13 @@
     <h1>@customers.size() customer(s)</h1>
     <ul>
     @for(customer <- customers) {
-        <li>@customer.name (@customer.id) <a href="@routes.Application.getCustomer(customer.id)">details</a></li>
+        <li>@customer.name <a href="@routes.Application.getCustomer(customer.id)">details</a></li>
     }
     </ul>
     <h1>@products.size() product(s)</h1>
     <ul>
     @for(product <- products) {
-        <li>@product.name (@product.id)</li>
+        <li>@product.name <a href="@routes.Application.getProduct(product.id)">details</a></li>
     }
     </ul>
 }
