@@ -5,7 +5,35 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-POST    /ws/test                    controllers.Application.testJson()
+POST    /rest/testpost                    controllers.Application.testJson()
+PUT     /rest/testpost                    controllers.Application.testJson()
+
+# To insert (create) a new customer
+POST    /customers                        controllers.Application.createCustomer()
+# To read a customer with Customer ID
+GET     /customers/:id                    controllers.Application.getCustomer(id: Long)
+# To update a customer
+PUT     /customers/:id                    controllers.Application.updateCustomer(id: Long)
+# To delete a customer
+DELETE  /customer/:id                     controllers.Application.deleteCustomer(id: Long)
+
+
+# Creating a new product
+POST    /products                         controllers.Application.createProduct()
+# To read a product with product ID
+GET     /products/:id                      controllers.Application.getProduct(id: Long)
+# To update a product
+PUT     /products/:id                      controllers.Application.updateProduct(id: Long)
+# To delete a product
+DELETE  /products/:id                      controllers.Application.deleteProduct(id: Long)
+
+# Creating an order for a customer
+POST    /customers/:customerId/orders             controllers.Application.createOrder(customerId: Long)
+# To read all orders for a given customer
+GET     /customers/:customerId/orders             controllers.Application.getOrders(customerId: Long)
+# To read a specific order for a given customer
+GET     /customers/:customerId/orders/:orderId        controllers.Application.getOrder(customerId: Long, orderId: Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

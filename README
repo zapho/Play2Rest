@@ -2,3 +2,27 @@ This is your new Play 2.0 application
 =====================================
 
 This file will be packaged with your application, when using `play dist`.
+
+
+CURL Commands
+
+Dummy stuff
+curl --verbose --header "Content-type: application/json" --request PUT --data '{"name" : "Fabrice"}' http://localhost:9000/rest/testpost
+
+
+Add products
+curl --verbose --header "Content-type: application/json" --request POST --data '{"name" : "Asus TF201", "priceInEuroCents" : "70000"}' http://localhost:9000/products
+curl --verbose --header "Content-type: application/json" --request POST --data '{"name" : "Cornflakes", "priceInEuroCents" : "650"}' http://localhost:9000/products
+curl --verbose --header "Content-type: application/json" --request POST --data '{"name" : "Renault Scenic", "priceInEuroCents" : "2500000"}' http://localhost:9000/products
+
+
+Add Customer :
+curl --verbose --header "Content-type: application/json" --request POST --data '{"name" : "Fabrice"}' http://localhost:9000/customers
+curl --verbose --header "Content-type: application/json" --request POST --data '{"name" : "Sébastien"}' http://localhost:9000/customers
+
+Get Customer details :
+curl --verbose --header "Content-type: application/json" --request GET http://localhost:9000/customers/1
+
+Get Product details :
+curl --verbose --header "Content-type: application/json" --request GET http://localhost:9000/products/1
+
